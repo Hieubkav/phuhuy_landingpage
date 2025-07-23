@@ -168,52 +168,7 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Card className="glass-card">
-            <CardContent className="p-8">
-              <div className="max-w-3xl mx-auto">
-                <h3 className="text-3xl font-bold mb-4">
-                  <span className="text-gradient">Hãy Cùng Tạo Nên Điều Tuyệt Vời!</span>
-                </h3>
-                <p className="text-lg text-gray-300 mb-6">
-                  Với hơn 5 năm kinh nghiệm và 400+ dự án thành công, tôi cam kết mang đến 
-                  chất lượng tốt nhất cho mọi khách hàng. Hãy liên hệ ngay để được tư vấn miễn phí!
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                  <Button 
-                    size="lg"
-                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 glow-red"
-                    onClick={() => window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank')}
-                  >
-                    <Facebook className="mr-2 h-5 w-5" />
-                    Chat Facebook
-                  </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="glass-card border-red-500/30 text-red-400 hover:bg-red-500/10"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Gọi Điện Tư Vấn
-                  </Button>
-                </div>
 
-                <div className="flex items-center justify-center gap-2 text-gray-400">
-                  <Heart className="h-4 w-4 text-red-400" />
-                  <span className="text-sm">Cảm ơn bạn đã tin tưởng và lựa chọn!</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );

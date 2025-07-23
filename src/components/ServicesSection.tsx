@@ -206,34 +206,7 @@ export default function ServicesSection() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Card className="glass-card">
-            <CardContent className="p-8">
-              <h3 className="text-3xl font-bold mb-4">
-                <span className="text-gradient">Sẵn Sàng Bắt Đầu?</span>
-              </h3>
-              <p className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
-                Hãy liên hệ ngay để thảo luận về dự án của bạn. 
-                Tôi cam kết mang đến chất lượng tốt nhất với giá cả hợp lý.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 glow-red"
-                onClick={() => window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank')}
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Bắt Đầu Dự Án
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
+
       </div>
     </section>
   );
