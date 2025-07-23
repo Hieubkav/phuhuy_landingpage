@@ -11,6 +11,7 @@ const HeroSection = dynamic(() => import('@/components/HeroSection'), {
 const AboutSection = dynamic(() => import('@/components/AboutSection'));
 const ExperienceSection = dynamic(() => import('@/components/ExperienceSection'));
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
+const WorkingProcessSection = dynamic(() => import('@/components/WorkingProcessSection'));
 const ContactSection = dynamic(() => import('@/components/ContactSection'));
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <AboutSection />
         <ExperienceSection />
         <ServicesSection />
+        <WorkingProcessSection />
         <ContactSection />
       </main>
       <Footer />

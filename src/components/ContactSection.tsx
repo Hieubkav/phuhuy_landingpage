@@ -8,10 +8,7 @@ import {
   Facebook,
   CreditCard,
   Clock,
-  Phone,
-  MapPin,
-  Send,
-  Heart
+  Send
 } from 'lucide-react';
 
 const contactMethods = [
@@ -41,28 +38,7 @@ const contactMethods = [
   }
 ];
 
-const workingProcess = [
-  {
-    step: '01',
-    title: 'Tư Vấn',
-    description: 'Thảo luận yêu cầu và báo giá chi tiết'
-  },
-  {
-    step: '02',
-    title: 'Thỏa Thuận',
-    description: 'Xác nhận dự án và timeline thực hiện'
-  },
-  {
-    step: '03',
-    title: 'Thực Hiện',
-    description: 'Bắt đầu làm việc và cập nhật tiến độ'
-  },
-  {
-    step: '04',
-    title: 'Hoàn Thành',
-    description: 'Giao hàng và hỗ trợ sau dự án'
-  }
-];
+
 
 export default function ContactSection() {
   return (
@@ -131,42 +107,7 @@ export default function ContactSection() {
           ))}
         </div>
 
-        {/* Working Process */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl font-bold text-center mb-12">
-            <span className="text-gradient">Quy Trình Làm Việc</span>
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {workingProcess.map((process, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center border-2 border-red-500/30">
-                    <span className="text-2xl font-bold text-red-400">{process.step}</span>
-                  </div>
-                  {index < workingProcess.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-red-500/50 to-transparent"></div>
-                  )}
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">{process.title}</h4>
-                <p className="text-gray-300 text-sm">{process.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
 
       </div>
