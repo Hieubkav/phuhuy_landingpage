@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SpeedDialSimple from '@/components/SpeedDialSimple';
 
 // Lazy load components for better performance
 const HeroSection = dynamic(() => import('@/components/HeroSection'), {
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <SpeedDialSimple />
     </>
   );
 }
