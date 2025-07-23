@@ -66,8 +66,8 @@ const tools = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="section-padding container-padding bg-gradient-to-b from-transparent to-black/20">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="section-padding container-padding bg-gradient-to-b from-transparent to-black/20 w-full max-w-full overflow-x-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

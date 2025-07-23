@@ -16,9 +16,9 @@ const ContactSection = dynamic(() => import('@/components/ContactSection'));
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full max-w-full overflow-x-hidden">
       <Navigation />
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full max-w-full overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
@@ -28,6 +28,6 @@ export default function Home() {
       </main>
       <Footer />
       <SpeedDialSimple />
-    </>
+    </div>
   );
 }

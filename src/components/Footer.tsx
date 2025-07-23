@@ -16,8 +16,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-t from-black to-transparent border-t border-white/10">
-      <div className="max-w-6xl mx-auto container-padding py-10 sm:py-12">
+    <footer className="bg-gradient-to-t from-black to-transparent border-t border-white/10 w-full max-w-full overflow-x-hidden">
+      <div className="max-w-6xl mx-auto container-padding py-10 sm:py-12 w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <motion.div

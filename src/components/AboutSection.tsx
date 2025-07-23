@@ -56,8 +56,8 @@ const skills = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding container-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="section-padding container-padding w-full max-w-full overflow-x-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -8,8 +8,8 @@ import { Facebook, Mail, Phone } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center container-padding section-padding">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="hero" className="min-h-screen flex items-center justify-center container-padding section-padding w-full max-w-full overflow-x-hidden">
+      <div className="max-w-4xl mx-auto text-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

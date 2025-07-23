@@ -44,8 +44,8 @@ const workingProcess = [
 
 export default function WorkingProcessSection() {
   return (
-    <section className="section-padding container-padding bg-gradient-to-b from-transparent via-gray-900/20 to-transparent">
-      <div className="max-w-7xl mx-auto">
+    <section className="section-padding container-padding bg-gradient-to-b from-transparent via-gray-900/20 to-transparent w-full max-w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

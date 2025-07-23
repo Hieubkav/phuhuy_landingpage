@@ -42,8 +42,8 @@ const contactMethods = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="section-padding container-padding bg-gradient-to-t from-black/40 to-transparent">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="section-padding container-padding bg-gradient-to-t from-black/40 to-transparent w-full max-w-full overflow-x-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
