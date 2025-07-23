@@ -1,11 +1,11 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 
 interface ResponsiveWrapperProps {
   children: ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 const ResponsiveWrapper = ({ 

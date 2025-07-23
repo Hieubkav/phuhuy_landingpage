@@ -43,7 +43,7 @@ const FloatingParticles = () => {
       window.removeEventListener('resize', resizeCanvas);
       stopAnimation();
     };
-  }, []);
+  }, [initializeParticles, startAnimation, stopAnimation]);
 
   return (
     <canvas

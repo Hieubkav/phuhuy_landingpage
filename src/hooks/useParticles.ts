@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
 
 interface ParticleConfig {
   count?: number;
@@ -33,7 +33,7 @@ export const useParticles = (config: ParticleConfig = {}) => {
   } = config;
 
   const particlesRef = useRef<Particle[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   const createParticle = useCallback((width: number, height: number): Particle => {
     const maxLife = 300 + Math.random() * 200;
@@ -144,8 +144,9 @@ export const useParticles = (config: ParticleConfig = {}) => {
   }, [animate]);
 
   const stopAnimation = useCallback(() => {
-    if (animationRef.current) {
+    if (animationRef.current !== null) {
       cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
     }
   }, []);
 

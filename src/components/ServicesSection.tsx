@@ -9,7 +9,6 @@ import {
   Globe,
   Sparkles,
   Heart,
-  Play,
   ArrowRight,
   Star
 } from 'lucide-react';
