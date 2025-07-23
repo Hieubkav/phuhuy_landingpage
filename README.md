@@ -35,7 +35,6 @@ Landing page cá nhân chuyên nghiệp cho Phú Huy - Content Creator & Video E
 ### 💼 Experience Section
 - 5+ năm kinh nghiệm editing
 - Discord bot Yu-Gi-Oh với 3000+ members
-- Quản lý shop Khánh Huy - chủ hội Yu-Gi-Oh Cà Mau
 - 400-600+ khách hàng và đơn hàng
 
 ### 🛠️ Services Section

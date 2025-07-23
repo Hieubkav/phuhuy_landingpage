@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import {
   Calendar,
   Bot,
-  Store,
   Globe,
   Award,
   Zap,
@@ -27,19 +26,7 @@ const experiences = [
     ],
     color: 'from-purple-500/20 to-purple-600/20'
   },
-  {
-    icon: Store,
-    title: 'Quản lý Shop Khánh Huy',
-    period: '2019 - Hiện tại',
-    description: 'Chủ hội Yu-Gi-Oh Cà Mau, quản lý shop bán thẻ bài và tổ chức các giải đấu',
-    achievements: [
-      'Chủ hội Yu-Gi-Oh Cà Mau',
-      'Quản lý inventory',
-      'Tổ chức tournament',
-      'Customer service'
-    ],
-    color: 'from-green-500/20 to-green-600/20'
-  },
+
   {
     icon: Globe,
     title: 'Quản lý Page CDMA',
