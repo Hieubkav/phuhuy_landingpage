@@ -1345,6 +1345,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TypewriterEffect$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/TypewriterEffect.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
@@ -1354,300 +1357,390 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Typewri
 ;
 ;
 function HeroSection() {
+    _s();
+    const [ripples, setRipples] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const handleBackgroundClick = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "HeroSection.useCallback[handleBackgroundClick]": (e)=>{
+            // Chỉ tạo ripple khi click vào background, không phải các element con
+            if (e.target === e.currentTarget) {
+                const rect = e.currentTarget.getBoundingClientRect();
+                let x, y;
+                // Xử lý cả mouse và touch events
+                if ('clientX' in e) {
+                    // Mouse event
+                    x = e.clientX - rect.left;
+                    y = e.clientY - rect.top;
+                } else {
+                    // Touch event
+                    const touch = e.touches[0] || e.changedTouches[0];
+                    x = touch.clientX - rect.left;
+                    y = touch.clientY - rect.top;
+                }
+                const newRipple = {
+                    id: Date.now() + Math.random(),
+                    x,
+                    y,
+                    timestamp: Date.now()
+                };
+                setRipples({
+                    "HeroSection.useCallback[handleBackgroundClick]": (prev)=>{
+                        // Giới hạn số lượng ripples để tránh lag
+                        const filtered = prev.filter({
+                            "HeroSection.useCallback[handleBackgroundClick].filtered": (ripple)=>Date.now() - ripple.timestamp < 1200
+                        }["HeroSection.useCallback[handleBackgroundClick].filtered"]);
+                        return [
+                            ...filtered,
+                            newRipple
+                        ].slice(-5); // Tối đa 5 ripples cùng lúc
+                    }
+                }["HeroSection.useCallback[handleBackgroundClick]"]);
+                // Tự động xóa ripple sau 1.2 giây
+                setTimeout({
+                    "HeroSection.useCallback[handleBackgroundClick]": ()=>{
+                        setRipples({
+                            "HeroSection.useCallback[handleBackgroundClick]": (prev)=>prev.filter({
+                                    "HeroSection.useCallback[handleBackgroundClick]": (ripple)=>ripple.id !== newRipple.id
+                                }["HeroSection.useCallback[handleBackgroundClick]"])
+                        }["HeroSection.useCallback[handleBackgroundClick]"]);
+                    }
+                }["HeroSection.useCallback[handleBackgroundClick]"], 1200);
+            }
+        }
+    }["HeroSection.useCallback[handleBackgroundClick]"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "hero",
-        className: "min-h-screen flex items-center justify-center container-padding section-padding w-full max-w-full overflow-x-hidden",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-4xl mx-auto text-center w-full",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                initial: {
-                    opacity: 0,
-                    y: 50
-                },
-                animate: {
-                    opacity: 1,
-                    y: 0
-                },
-                transition: {
-                    duration: 0.8
-                },
-                className: "content-spacing",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            scale: 0
-                        },
-                        animate: {
-                            scale: 1
-                        },
-                        transition: {
-                            delay: 0.2,
-                            duration: 0.6
-                        },
-                        className: "flex justify-center mb-2",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative",
+        className: "hero-section min-h-screen flex items-center justify-center container-padding section-padding w-full max-w-full overflow-x-hidden relative cursor-pointer",
+        onClick: handleBackgroundClick,
+        onTouchStart: handleBackgroundClick,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "hero-frosted-overlay absolute inset-0 pointer-events-none z-[1]"
+            }, void 0, false, {
+                fileName: "[project]/src/components/HeroSection.tsx",
+                lineNumber: 67,
+                columnNumber: 7
+            }, this),
+            ripples.map((ripple)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "ripple-effect absolute pointer-events-none z-[2] w-4 h-4",
+                    style: {
+                        left: ripple.x,
+                        top: ripple.y
+                    },
+                    initial: {
+                        scale: 0,
+                        opacity: 0.8
+                    },
+                    animate: {
+                        scale: 25,
+                        opacity: 0
+                    },
+                    transition: {
+                        duration: 1.2,
+                        ease: [
+                            0.25,
+                            0.46,
+                            0.45,
+                            0.94
+                        ] // Custom easing for smoother animation
+                    }
+                }, ripple.id, false, {
+                    fileName: "[project]/src/components/HeroSection.tsx",
+                    lineNumber: 71,
+                    columnNumber: 9
+                }, this)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-4xl mx-auto text-center w-full relative z-[3]",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        opacity: 0,
+                        y: 50
+                    },
+                    animate: {
+                        opacity: 1,
+                        y: 0
+                    },
+                    transition: {
+                        duration: 0.8
+                    },
+                    className: "content-spacing",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                scale: 0
+                            },
+                            animate: {
+                                scale: 1
+                            },
+                            transition: {
+                                delay: 0.2,
+                                duration: 0.6
+                            },
+                            className: "flex justify-center mb-2",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Avatar"], {
+                                        className: "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 border-4 border-red-500/30 glow-red",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                                src: "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/474882454_1313143333067240_5295512466136977995_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFe6jLQTKp0-V5B6I6cI-E9BVdSsnzp304FV1KyfOnfTtKDFyGfC2guC10CTjDC5sccumJ7jjns0VR1VjW8C5mm&_nc_ohc=vrbKalQBxc4Q7kNvwFFpdPa&_nc_oc=AdlC1wngmB3GNHX18zoqCoo3AtmGq4W0_mSZcOV5O0ia16JyMQ4bloJGL_XMsg2SWijL1ZvNsbO9R0DHVlv_hgY6&_nc_zt=23&_nc_ht=scontent.fsgn5-9.fna&_nc_gid=THVioyMkrC6LvoAmyEzCpg&oh=00_AfQvo9mif8qHQHBBSFqXiLKsXx4IfATPmK1A9sqs74r2Cg&oe=6886E4E1",
+                                                alt: "Phú Huy Avatar"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/HeroSection.tsx",
+                                                lineNumber: 103,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                                children: "PH"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/HeroSection.tsx",
+                                                lineNumber: 107,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 102,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-red-600/20 to-red-400/20 rounded-full blur-xl animate-pulse"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 109,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/HeroSection.tsx",
+                                lineNumber: 101,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/HeroSection.tsx",
+                            lineNumber: 95,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                y: 30
+                            },
+                            animate: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            transition: {
+                                delay: 0.4,
+                                duration: 0.6
+                            },
+                            className: "content-spacing-sm",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Avatar"], {
-                                    className: "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 border-4 border-red-500/30 glow-red",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-gradient",
+                                        children: "Phú Huy"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 121,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 120,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TypewriterEffect$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    className: "text-lg sm:text-xl md:text-2xl text-gray-300 font-medium"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 123,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed px-4",
+                                    children: "Video Editor chuyên nghiệp với 5+ năm kinh nghiệm. Chuyên về YouTube, Facebook, Discord content. Thành thạo AI, Photoshop, Illustrator."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 124,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/HeroSection.tsx",
+                            lineNumber: 114,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                y: 30
+                            },
+                            animate: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            transition: {
+                                delay: 0.6,
+                                duration: 0.6
+                            },
+                            className: "flex flex-wrap justify-center gap-2 sm:gap-3 px-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                    variant: "secondary",
+                                    className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
+                                    children: "5+ Năm Kinh Nghiệm"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 137,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                    variant: "secondary",
+                                    className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
+                                    children: "400+ Khách Hàng"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 140,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                    variant: "secondary",
+                                    className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
+                                    children: "YouTube & Facebook Expert"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 143,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                    variant: "secondary",
+                                    className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
+                                    children: "Discord Bot Developer"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSection.tsx",
+                                    lineNumber: 146,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/HeroSection.tsx",
+                            lineNumber: 131,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                y: 30
+                            },
+                            animate: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            transition: {
+                                delay: 0.8,
+                                duration: 0.6
+                            },
+                            className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                    size: "lg",
+                                    className: "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 glow-red w-full sm:w-auto px-6 py-3",
+                                    onClick: ()=>window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank'),
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarImage"], {
-                                            src: "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/474882454_1313143333067240_5295512466136977995_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFe6jLQTKp0-V5B6I6cI-E9BVdSsnzp304FV1KyfOnfTtKDFyGfC2guC10CTjDC5sccumJ7jjns0VR1VjW8C5mm&_nc_ohc=vrbKalQBxc4Q7kNvwFFpdPa&_nc_oc=AdlC1wngmB3GNHX18zoqCoo3AtmGq4W0_mSZcOV5O0ia16JyMQ4bloJGL_XMsg2SWijL1ZvNsbO9R0DHVlv_hgY6&_nc_zt=23&_nc_ht=scontent.fsgn5-9.fna&_nc_gid=THVioyMkrC6LvoAmyEzCpg&oh=00_AfQvo9mif8qHQHBBSFqXiLKsXx4IfATPmK1A9sqs74r2Cg&oe=6886E4E1",
-                                            alt: "Phú Huy Avatar"
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"], {
+                                            className: "mr-2 h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 29,
-                                            columnNumber: 17
+                                            lineNumber: 163,
+                                            columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
-                                            children: "PH"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 33,
-                                            columnNumber: 17
-                                        }, this)
+                                        "Liên Hệ Facebook"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 28,
-                                    columnNumber: 15
+                                    lineNumber: 158,
+                                    columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-red-600/20 to-red-400/20 rounded-full blur-xl animate-pulse"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                    size: "lg",
+                                    variant: "outline",
+                                    className: "glass-card border-red-500/30 text-red-400 hover:bg-red-500/10 w-full sm:w-auto px-6 py-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
+                                            className: "mr-2 h-5 w-5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSection.tsx",
+                                            lineNumber: 171,
+                                            columnNumber: 15
+                                        }, this),
+                                        "Xem Portfolio"
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 35,
-                                    columnNumber: 15
+                                    lineNumber: 166,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 27,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 21,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            y: 30
-                        },
-                        animate: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            delay: 0.4,
-                            duration: 0.6
-                        },
-                        className: "content-spacing-sm",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-gradient",
-                                    children: "Phú Huy"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 47,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 46,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TypewriterEffect$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                className: "text-lg sm:text-xl md:text-2xl text-gray-300 font-medium"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 49,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed px-4",
-                                children: "Video Editor chuyên nghiệp với 5+ năm kinh nghiệm. Chuyên về YouTube, Facebook, Discord content. Thành thạo AI, Photoshop, Illustrator."
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 50,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 40,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            y: 30
-                        },
-                        animate: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            delay: 0.6,
-                            duration: 0.6
-                        },
-                        className: "flex flex-wrap justify-center gap-2 sm:gap-3 px-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
-                                variant: "secondary",
-                                className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
-                                children: "5+ Năm Kinh Nghiệm"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 63,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
-                                variant: "secondary",
-                                className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
-                                children: "400+ Khách Hàng"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 66,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
-                                variant: "secondary",
-                                className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
-                                children: "YouTube & Facebook Expert"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 69,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
-                                variant: "secondary",
-                                className: "glass-card text-red-400 border-red-500/30 text-xs sm:text-sm px-3 py-1",
-                                children: "Discord Bot Developer"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 72,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 57,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            y: 30
-                        },
-                        animate: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            delay: 0.8,
-                            duration: 0.6
-                        },
-                        className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                size: "lg",
-                                className: "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 glow-red w-full sm:w-auto px-6 py-3",
-                                onClick: ()=>window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank'),
+                            lineNumber: 152,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0
+                            },
+                            animate: {
+                                opacity: 1
+                            },
+                            transition: {
+                                delay: 1,
+                                duration: 0.6
+                            },
+                            className: "pt-6 text-gray-400 text-sm",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "flex items-center justify-center gap-2",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"], {
-                                        className: "mr-2 h-5 w-5"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
+                                        className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 184,
                                         columnNumber: 15
                                     }, this),
-                                    "Liên Hệ Facebook"
+                                    "STK: 0359595173 (MB Bank)"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 84,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                size: "lg",
-                                variant: "outline",
-                                className: "glass-card border-red-500/30 text-red-400 hover:bg-red-500/10 w-full sm:w-auto px-6 py-3",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
-                                        className: "mr-2 h-5 w-5"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 97,
-                                        columnNumber: 15
-                                    }, this),
-                                    "Xem Portfolio"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 92,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 78,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0
-                        },
-                        animate: {
-                            opacity: 1
-                        },
-                        transition: {
-                            delay: 1,
-                            duration: 0.6
-                        },
-                        className: "pt-6 text-gray-400 text-sm",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "flex items-center justify-center gap-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
-                                    className: "h-4 w-4"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 110,
-                                    columnNumber: 15
-                                }, this),
-                                "STK: 0359595173 (MB Bank)"
-                            ]
-                        }, void 0, true, {
+                        }, void 0, false, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 109,
-                            columnNumber: 13
+                            lineNumber: 177,
+                            columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 103,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/HeroSection.tsx",
+                    lineNumber: 88,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 14,
-                columnNumber: 9
+                lineNumber: 87,
+                columnNumber: 7
             }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/HeroSection.tsx",
-            lineNumber: 13,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/components/HeroSection.tsx",
-        lineNumber: 12,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }
+_s(HeroSection, "lYspN6hmurfBvDidgZ23blOPQEM=");
 _c = HeroSection;
 var _c;
 __turbopack_context__.k.register(_c, "HeroSection");

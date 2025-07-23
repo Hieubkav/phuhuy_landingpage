@@ -6,11 +6,85 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Facebook, Mail, Phone } from 'lucide-react';
 import TypewriterEffect from './TypewriterEffect';
+import { useState, useCallback } from 'react';
+
+interface RippleEffect {
+  id: number;
+  x: number;
+  y: number;
+  timestamp: number;
+}
 
 export default function HeroSection() {
+  const [ripples, setRipples] = useState<RippleEffect[]>([]);
+
+  const handleBackgroundClick = useCallback((e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
+    // Chỉ tạo ripple khi click vào background, không phải các element con
+    if (e.target === e.currentTarget) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      let x: number, y: number;
+
+      // Xử lý cả mouse và touch events
+      if ('clientX' in e) {
+        // Mouse event
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
+      } else {
+        // Touch event
+        const touch = e.touches[0] || e.changedTouches[0];
+        x = touch.clientX - rect.left;
+        y = touch.clientY - rect.top;
+      }
+
+      const newRipple: RippleEffect = {
+        id: Date.now() + Math.random(),
+        x,
+        y,
+        timestamp: Date.now()
+      };
+
+      setRipples(prev => {
+        // Giới hạn số lượng ripples để tránh lag
+        const filtered = prev.filter(ripple => Date.now() - ripple.timestamp < 1200);
+        return [...filtered, newRipple].slice(-5); // Tối đa 5 ripples cùng lúc
+      });
+
+      // Tự động xóa ripple sau 1.2 giây
+      setTimeout(() => {
+        setRipples(prev => prev.filter(ripple => ripple.id !== newRipple.id));
+      }, 1200);
+    }
+  }, []);
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center container-padding section-padding w-full max-w-full overflow-x-hidden">
-      <div className="max-w-4xl mx-auto text-center w-full">
+    <section
+      id="hero"
+      className="hero-section min-h-screen flex items-center justify-center container-padding section-padding w-full max-w-full overflow-x-hidden relative cursor-pointer"
+      onClick={handleBackgroundClick}
+      onTouchStart={handleBackgroundClick}
+    >
+      {/* Frosted Glass Overlay */}
+      <div className="hero-frosted-overlay absolute inset-0 pointer-events-none z-[1]" />
+
+      {/* Ripple Effects */}
+      {ripples.map((ripple) => (
+        <motion.div
+          key={ripple.id}
+          className="ripple-effect absolute pointer-events-none z-[2] w-4 h-4"
+          style={{
+            left: ripple.x,
+            top: ripple.y,
+          }}
+          initial={{ scale: 0, opacity: 0.8 }}
+          animate={{ scale: 25, opacity: 0 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94] // Custom easing for smoother animation
+          }}
+        />
+      ))}
+
+      <div className="max-w-4xl mx-auto text-center w-full relative z-[3]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
