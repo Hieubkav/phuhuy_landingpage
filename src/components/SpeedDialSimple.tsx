@@ -41,7 +41,7 @@ export default function SpeedDialSimple() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={openZalo}
-        className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group"
+        className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group hover:from-red-400 hover:to-red-500 hover:speed-dial-glow"
         title="Chat Zalo"
       >
         {/* Zalo Icon - Letter Z */}
@@ -61,7 +61,7 @@ export default function SpeedDialSimple() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={openFacebook}
-        className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group"
+        className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group hover:from-red-500 hover:to-red-600 hover:speed-dial-glow"
         title="Facebook"
       >
         <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -81,7 +81,7 @@ export default function SpeedDialSimple() {
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}
-          className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group"
+          className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl group hover:from-slate-600 hover:to-slate-700"
           title="Lên đầu trang"
         >
           <motion.div
