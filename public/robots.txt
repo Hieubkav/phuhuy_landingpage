@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://phuhuy-portfolio.github.io/sitemap.xml
+Sitemap: https://hieubkav.github.io/phuhuy_landingpage/sitemap.xml

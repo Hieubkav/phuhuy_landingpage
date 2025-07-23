@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/phuhuy-portfolio/' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/phuhuy-portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/phuhuy_landingpage/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/phuhuy_landingpage' : '',
 };
 
 export default nextConfig;

@@ -81,29 +81,34 @@ Files sẽ được tạo trong thư mục `dist/`.
 
 ## 🌐 Deploy lên GitHub Pages
 
-### 1. Tạo Repository
-- Tạo repository mới trên GitHub với tên `phuhuy-portfolio`
-- Push code lên repository
+### 1. Repository
+- **Repository:** https://github.com/Hieubkav/phuhuy_landingpage
+- **Live URL:** https://hieubkav.github.io/phuhuy_landingpage/
 
 ### 2. Cấu hình GitHub Pages
 - Vào Settings > Pages
 - Chọn Source: GitHub Actions
-- Workflow sẽ tự động chạy khi push code
+- Workflow sẽ tự động chạy khi push code lên branch `main` hoặc `master`
 
-### 3. Cập nhật URL
-Cập nhật các URL trong:
-- `next.config.ts` - basePath và assetPrefix
-- `public/sitemap.xml` - domain URLs
-- `public/robots.txt` - sitemap URL
+### 3. Auto Deploy
+GitHub Actions đã được cấu hình để:
+- ✅ Tự động build khi có push/PR
+- ✅ Deploy lên GitHub Pages
+- ✅ Hỗ trợ cả branch `main` và `master`
+- ✅ Sử dụng Node.js 20 và npm cache
 
-### 4. Deploy
+### 4. Deploy Manual
 ```bash
 git add .
-git commit -m "Deploy portfolio website"
+git commit -m "Update Phú Huy landing page"
 git push origin main
 ```
 
-Website sẽ có sẵn tại: `https://[username].github.io/phuhuy-portfolio/`
+### 5. Workflow Features
+- **Permissions:** Tự động cấu hình pages permissions
+- **Concurrency:** Tránh conflict khi deploy đồng thời
+- **Artifact Upload:** Upload build files an toàn
+- **Environment:** Deploy với GitHub Pages environment
 
 ## 📁 Cấu Trúc Dự Án
 
