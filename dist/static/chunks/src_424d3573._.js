@@ -1244,38 +1244,38 @@ function HeroSection() {
                                             alt: "Phú Huy Avatar"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 28,
+                                            lineNumber: 29,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                             children: "PH"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 32,
+                                            lineNumber: 33,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 28,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-red-600/20 to-red-400/20 rounded-full blur-xl animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 35,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 26,
+                            lineNumber: 27,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1300,12 +1300,12 @@ function HeroSection() {
                                     children: "Phú Huy"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 45,
+                                lineNumber: 46,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1313,7 +1313,7 @@ function HeroSection() {
                                 children: "Content Creator & Video Editor"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 48,
+                                lineNumber: 49,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1321,13 +1321,13 @@ function HeroSection() {
                                 children: "Video Editor chuyên nghiệp với 5+ năm kinh nghiệm. Chuyên về YouTube, Facebook, Discord content. Thành thạo AI, Photoshop, Illustrator."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 51,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1351,7 +1351,7 @@ function HeroSection() {
                                 children: "5+ Năm Kinh Nghiệm"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1360,7 +1360,7 @@ function HeroSection() {
                                 children: "400+ Khách Hàng"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 67,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1369,7 +1369,7 @@ function HeroSection() {
                                 children: "YouTube & Facebook Expert"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 70,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1378,13 +1378,13 @@ function HeroSection() {
                                 children: "Discord Bot Developer"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 73,
+                                lineNumber: 74,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1411,14 +1411,14 @@ function HeroSection() {
                                         className: "mr-2 h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 91,
                                         columnNumber: 15
                                     }, this),
                                     "Liên Hệ Facebook"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 85,
+                                lineNumber: 86,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1430,20 +1430,20 @@ function HeroSection() {
                                         className: "mr-2 h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, this),
                                     "Xem Portfolio"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 79,
+                        lineNumber: 80,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1465,35 +1465,35 @@ function HeroSection() {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 112,
                                     columnNumber: 15
                                 }, this),
                                 "STK: 0359595173 (MB Bank)"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 110,
+                            lineNumber: 111,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 104,
+                        lineNumber: 105,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/HeroSection.tsx",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/HeroSection.tsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }

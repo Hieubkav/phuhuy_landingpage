@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Facebook, Mail, Phone } from 'lucide-react';
+import TypewriterEffect from './TypewriterEffect';
 
 export default function HeroSection() {
   return (
@@ -45,9 +46,7 @@ export default function HeroSection() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="text-gradient">Phú Huy</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium">
-              Content Creator & Video Editor
-            </p>
+            <TypewriterEffect className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium" />
             <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed px-4">
               Video Editor chuyên nghiệp với 5+ năm kinh nghiệm. Chuyên về YouTube, Facebook, Discord content.
               Thành thạo AI, Photoshop, Illustrator.

@@ -1099,6 +1099,126 @@ function Badge({ className, variant, asChild = false, ...props }) {
 }
 ;
 }),
+"[project]/src/components/TypewriterEffect.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s({
+    "default": ()=>TypewriterEffect
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+'use client';
+;
+;
+function TypewriterEffect({ className = '' }) {
+    const [displayText, setDisplayText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [currentPhase, setCurrentPhase] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isDeleting, setIsDeleting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const phases = [
+        {
+            text: 'Content',
+            nextAction: 'delete'
+        },
+        {
+            text: 'Creator',
+            nextAction: 'add'
+        },
+        {
+            text: 'Creator & ',
+            nextAction: 'continue'
+        },
+        {
+            text: 'Creator & Video',
+            nextAction: 'add'
+        },
+        {
+            text: 'Creator & Video ',
+            nextAction: 'continue'
+        },
+        {
+            text: 'Creator & Video Editor',
+            nextAction: 'complete'
+        }
+    ];
+    const fullText = 'Content Creator & Video Editor';
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const typeSpeed = 120; // Tốc độ đánh máy (ms)
+        const deleteSpeed = 80; // Tốc độ xóa (ms)
+        const pauseBetweenWords = 500; // Dừng giữa các từ (ms)
+        const displayFullTextTime = 2000; // Hiển thị full text (ms)
+        let timeout;
+        const typeWriter = ()=>{
+            const currentPhaseData = phases[currentPhase];
+            const targetText = currentPhaseData.text;
+            if (!isDeleting) {
+                // Đang đánh máy
+                if (displayText.length < targetText.length) {
+                    setDisplayText(targetText.slice(0, displayText.length + 1));
+                    timeout = setTimeout(typeWriter, typeSpeed);
+                } else {
+                    // Hoàn thành đánh từ hiện tại
+                    if (currentPhaseData.nextAction === 'delete') {
+                        // Dừng một chút rồi bắt đầu xóa
+                        timeout = setTimeout(()=>{
+                            setIsDeleting(true);
+                            typeWriter();
+                        }, pauseBetweenWords);
+                    } else if (currentPhaseData.nextAction === 'add') {
+                        // Dừng một chút rồi chuyển sang phase tiếp theo
+                        timeout = setTimeout(()=>{
+                            setCurrentPhase((prev)=>prev + 1);
+                        }, pauseBetweenWords);
+                    } else if (currentPhaseData.nextAction === 'continue') {
+                        // Tiếp tục ngay lập tức với phase tiếp theo
+                        setCurrentPhase((prev)=>prev + 1);
+                    } else if (currentPhaseData.nextAction === 'complete') {
+                        // Hiển thị full text trong một thời gian rồi restart
+                        timeout = setTimeout(()=>{
+                            setDisplayText('');
+                            setCurrentPhase(0);
+                            setIsDeleting(false);
+                        }, displayFullTextTime);
+                    }
+                }
+            } else {
+                // Đang xóa
+                if (displayText.length > 0) {
+                    setDisplayText(displayText.slice(0, -1));
+                    timeout = setTimeout(typeWriter, deleteSpeed);
+                } else {
+                    // Hoàn thành xóa, chuyển sang phase tiếp theo
+                    setIsDeleting(false);
+                    setCurrentPhase((prev)=>prev + 1);
+                }
+            }
+        };
+        timeout = setTimeout(typeWriter, typeSpeed);
+        return ()=>clearTimeout(timeout);
+    }, [
+        displayText,
+        currentPhase,
+        isDeleting
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+        className: className,
+        children: [
+            displayText,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "animate-pulse",
+                children: "|"
+            }, void 0, false, {
+                fileName: "[project]/src/components/TypewriterEffect.tsx",
+                lineNumber: 88,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/TypewriterEffect.tsx",
+        lineNumber: 86,
+        columnNumber: 5
+    }, this);
+}
+}),
 "[project]/src/components/HeroSection.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -1113,7 +1233,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$b
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/facebook.js [app-ssr] (ecmascript) <export default as Facebook>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript) <export default as Mail>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-ssr] (ecmascript) <export default as Phone>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TypewriterEffect$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/TypewriterEffect.tsx [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -1227,9 +1349,8 @@ function HeroSection() {
                                 lineNumber: 46,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg sm:text-xl md:text-2xl text-gray-300 font-medium",
-                                children: "Content Creator & Video Editor"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TypewriterEffect$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                className: "text-lg sm:text-xl md:text-2xl text-gray-300 font-medium"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
                                 lineNumber: 49,
@@ -1240,7 +1361,7 @@ function HeroSection() {
                                 children: "Video Editor chuyên nghiệp với 5+ năm kinh nghiệm. Chuyên về YouTube, Facebook, Discord content. Thành thạo AI, Photoshop, Illustrator."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 52,
+                                lineNumber: 50,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -1270,7 +1391,7 @@ function HeroSection() {
                                 children: "5+ Năm Kinh Nghiệm"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 65,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1279,7 +1400,7 @@ function HeroSection() {
                                 children: "400+ Khách Hàng"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 68,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1288,7 +1409,7 @@ function HeroSection() {
                                 children: "YouTube & Facebook Expert"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 71,
+                                lineNumber: 69,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1297,13 +1418,13 @@ function HeroSection() {
                                 children: "Discord Bot Developer"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 74,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 59,
+                        lineNumber: 57,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1330,14 +1451,14 @@ function HeroSection() {
                                         className: "mr-2 h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 89,
                                         columnNumber: 15
                                     }, this),
                                     "Liên Hệ Facebook"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 86,
+                                lineNumber: 84,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1349,20 +1470,20 @@ function HeroSection() {
                                         className: "mr-2 h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 97,
                                         columnNumber: 15
                                     }, this),
                                     "Xem Portfolio"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 94,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 80,
+                        lineNumber: 78,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1384,19 +1505,19 @@ function HeroSection() {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 110,
                                     columnNumber: 15
                                 }, this),
                                 "STK: 0359595173 (MB Bank)"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 111,
+                            lineNumber: 109,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 105,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this)
                 ]
@@ -3448,4 +3569,4 @@ function ContactSection() {
 
 };
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__c76f97b5._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__df9334ad._.js.map
