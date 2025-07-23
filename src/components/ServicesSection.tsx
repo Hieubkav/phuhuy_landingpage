@@ -149,15 +149,9 @@ export default function ServicesSection() {
                   </div>
 
                   <div className="pt-3 border-t border-white/10">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-center">
                       <span className="text-xl sm:text-2xl font-bold text-gradient">{service.price}</span>
                     </div>
-                    <Button
-                      className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 py-2.5"
-                      onClick={() => window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank')}
-                    >
-                      Liên Hệ Ngay
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
