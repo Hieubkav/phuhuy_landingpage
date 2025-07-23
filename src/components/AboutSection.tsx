@@ -56,25 +56,25 @@ const skills = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="section-padding container-padding">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             <span className="text-gradient">Chuyên Môn</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Với hơn 5 năm kinh nghiệm trong lĩnh vực content creation và video editing, 
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+            Với hơn 5 năm kinh nghiệm trong lĩnh vực content creation và video editing,
             tôi mang đến những giải pháp sáng tạo và chuyên nghiệp cho mọi dự án.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -86,22 +86,22 @@ export default function AboutSection() {
               className="h-full"
             >
               <Card className="glass-card h-full hover:glow-red transition-all duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 p-3 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 w-fit">
-                    <skill.icon className="h-8 w-8 text-red-400" />
+                <CardHeader className="text-center pb-3 pt-6">
+                  <div className="mx-auto mb-3 p-3 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 w-fit">
+                    <skill.icon className="h-7 w-7 sm:h-8 sm:w-8 text-red-400" />
                   </div>
-                  <CardTitle className="text-xl text-white">{skill.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl text-white">{skill.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-300 text-center leading-relaxed">
+                <CardContent className="space-y-3 pb-6">
+                  <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base">
                     {skill.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center">
                     {skill.tags.map((tag, tagIndex) => (
-                      <Badge 
-                        key={tagIndex} 
-                        variant="secondary" 
-                        className="text-xs bg-red-500/10 text-red-300 border-red-500/20"
+                      <Badge
+                        key={tagIndex}
+                        variant="secondary"
+                        className="text-xs bg-red-500/10 text-red-300 border-red-500/20 px-2 py-1"
                       >
                         {tag}
                       </Badge>
@@ -119,26 +119,26 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-16 md:mt-20"
         >
           <Card className="glass-card">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">5+</div>
-                  <div className="text-gray-300">Năm Kinh Nghiệm</div>
+            <CardContent className="p-6 sm:p-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+                <div className="space-y-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">5+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Năm Kinh Nghiệm</div>
                 </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">400+</div>
-                  <div className="text-gray-300">Khách Hàng</div>
+                <div className="space-y-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">400+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Khách Hàng</div>
                 </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">3000+</div>
-                  <div className="text-gray-300">Discord Members</div>
+                <div className="space-y-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">3000+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Discord Members</div>
                 </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">100%</div>
-                  <div className="text-gray-300">Hài Lòng</div>
+                <div className="space-y-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">100%</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Hài Lòng</div>
                 </div>
               </div>
             </CardContent>

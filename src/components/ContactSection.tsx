@@ -66,19 +66,19 @@ const workingProcess = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-t from-black/40 to-transparent">
+    <section id="contact" className="section-padding container-padding bg-gradient-to-t from-black/40 to-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             <span className="text-gradient">Liên Hệ</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
             Sẵn sàng biến ý tưởng của bạn thành hiện thực. Hãy liên hệ để bắt đầu dự án ngay hôm nay!
           </p>
         </motion.div>

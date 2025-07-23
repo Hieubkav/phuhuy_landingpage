@@ -66,26 +66,26 @@ const tools = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 px-4 bg-gradient-to-b from-transparent to-black/20">
+    <section id="experience" className="section-padding container-padding bg-gradient-to-b from-transparent to-black/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             <span className="text-gradient">Kinh Nghiệm</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Hành trình 5+ năm xây dựng và phát triển trong lĩnh vực content creation, 
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+            Hành trình 5+ năm xây dựng và phát triển trong lĩnh vực content creation,
             từ video editing đến community management.
           </p>
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="space-y-8 mb-20">
+        <div className="space-y-6 md:space-y-8 mb-16 md:mb-20">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -95,29 +95,29 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
             >
               <Card className="glass-card hover:glow-red transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-full bg-gradient-to-br ${exp.color}`}>
-                      <exp.icon className="h-6 w-6 text-white" />
+                <CardHeader className="pb-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className={`p-2.5 sm:p-3 rounded-full bg-gradient-to-br ${exp.color} flex-shrink-0`}>
+                      <exp.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                        <CardTitle className="text-xl text-white">{exp.title}</CardTitle>
-                        <Badge variant="outline" className="glass text-red-400 border-red-500/30 w-fit">
+                        <CardTitle className="text-lg sm:text-xl text-white">{exp.title}</CardTitle>
+                        <Badge variant="outline" className="glass text-red-400 border-red-500/30 w-fit text-xs sm:text-sm px-2 py-1">
                           <Calendar className="h-3 w-3 mr-1" />
                           {exp.period}
                         </Badge>
                       </div>
-                      <p className="text-gray-300 leading-relaxed">{exp.description}</p>
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{exp.description}</p>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <CardContent className="pt-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                     {exp.achievements.map((achievement, achIndex) => (
                       <div key={achIndex} className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-red-400 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{achievement}</span>
+                        <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
+                        <span className="text-gray-300 text-xs sm:text-sm">{achievement}</span>
                       </div>
                     ))}
                   </div>
@@ -135,14 +135,14 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
         >
           <Card className="glass-card">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-white flex items-center justify-center gap-2">
-                <Award className="h-6 w-6 text-red-400" />
+            <CardHeader className="text-center pb-4">
+              <CardTitle className="text-xl sm:text-2xl text-white flex items-center justify-center gap-2">
+                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-red-400" />
                 Công Cụ & Kỹ Năng
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CardContent className="pt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {tools.map((tool, index) => (
                   <motion.div
                     key={index}
@@ -153,16 +153,16 @@ export default function ExperienceSection() {
                     className="space-y-2"
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-white font-medium">{tool.name}</span>
-                      <span className="text-red-400 text-sm">{tool.level}%</span>
+                      <span className="text-white font-medium text-sm sm:text-base">{tool.name}</span>
+                      <span className="text-red-400 text-xs sm:text-sm">{tool.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="w-full bg-gray-700 rounded-full h-1.5 sm:h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${tool.level}%` }}
                         transition={{ duration: 1, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-red-500 to-red-400 h-2 rounded-full"
+                        className="bg-gradient-to-r from-red-500 to-red-400 h-1.5 sm:h-2 rounded-full"
                       />
                     </div>
                   </motion.div>

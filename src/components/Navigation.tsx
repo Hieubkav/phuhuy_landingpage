@@ -71,25 +71,25 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 py-4">
+        <div className="max-w-6xl mx-auto container-padding py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold"
+              className="text-xl sm:text-2xl font-bold"
             >
               <span className="text-gradient">Phú Huy</span>
             </motion.div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item) => (
                 <motion.button
                   key={item.name}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                   onClick={() => scrollToSection(item.href)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 text-sm lg:text-base ${
                     activeSection === item.href.substring(1)
                       ? 'text-red-400 bg-red-500/10'
                       : 'text-gray-300 hover:text-red-400 hover:bg-red-500/5'
@@ -99,9 +99,10 @@ export default function Navigation() {
                   {item.name}
                 </motion.button>
               ))}
-              
+
               <Button
-                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0"
+                size="sm"
+                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 px-4 py-2"
                 onClick={() => window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank')}
               >
                 <Facebook className="h-4 w-4 mr-2" />
@@ -129,29 +130,29 @@ export default function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 left-4 right-4 z-40 md:hidden"
+            className="fixed top-16 sm:top-20 left-4 right-4 z-40 md:hidden"
           >
-            <div className="glass-card backdrop-blur-lg border border-white/10 rounded-lg p-4">
-              <div className="space-y-2">
+            <div className="glass-card backdrop-blur-lg border border-white/10 rounded-lg p-3 sm:p-4">
+              <div className="space-y-1 sm:space-y-2">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.name}
                     whileHover={{ x: 10 }}
                     onClick={() => scrollToSection(item.href)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                    className={`w-full flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 text-sm sm:text-base ${
                       activeSection === item.href.substring(1)
                         ? 'text-red-400 bg-red-500/10'
                         : 'text-gray-300 hover:text-red-400 hover:bg-red-500/5'
                     }`}
                   >
-                    <item.icon className="h-5 w-5" />
+                    <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     {item.name}
                   </motion.button>
                 ))}
-                
-                <div className="pt-2 border-t border-white/10">
+
+                <div className="pt-2 border-t border-white/10 mt-2">
                   <Button
-                    className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0"
+                    className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 py-2.5"
                     onClick={() => {
                       window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank');
                       setIsOpen(false);

@@ -90,25 +90,25 @@ const testimonials = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 px-4">
+    <section id="services" className="section-padding container-padding">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
             <span className="text-gradient">Dịch Vụ</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
             Cung cấp giải pháp toàn diện cho nhu cầu content creation và digital marketing của bạn
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-20">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -123,38 +123,38 @@ export default function ServicesSection() {
                 service.popular ? 'border-red-500/50' : ''
               }`}>
                 {service.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-red-500 to-red-600 text-white">
+                  <div className="absolute -top-2.5 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-gradient-to-r from-red-500 to-red-600 text-white text-xs px-2 py-1">
                       <Star className="h-3 w-3 mr-1" />
                       Phổ Biến
                     </Badge>
                   </div>
                 )}
-                
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 p-4 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 w-fit">
-                    <service.icon className="h-8 w-8 text-red-400" />
+
+                <CardHeader className="text-center pb-3 pt-6">
+                  <div className="mx-auto mb-3 p-3 sm:p-4 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 w-fit">
+                    <service.icon className="h-7 w-7 sm:h-8 sm:w-8 text-red-400" />
                   </div>
-                  <CardTitle className="text-xl text-white mb-2">{service.title}</CardTitle>
-                  <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  <CardTitle className="text-lg sm:text-xl text-white mb-2">{service.title}</CardTitle>
+                  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{service.description}</p>
                 </CardHeader>
                 
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
+                <CardContent className="space-y-5 pb-6">
+                  <div className="space-y-2.5">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center gap-2">
-                        <ArrowRight className="h-4 w-4 text-red-400 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                        <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
+                        <span className="text-gray-300 text-xs sm:text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  
-                  <div className="pt-4 border-t border-white/10">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-bold text-gradient">{service.price}</span>
+
+                  <div className="pt-3 border-t border-white/10">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xl sm:text-2xl font-bold text-gradient">{service.price}</span>
                     </div>
-                    <Button 
-                      className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0"
+                    <Button
+                      className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white border-0 py-2.5"
                       onClick={() => window.open('https://www.facebook.com/phuhuy.nguyen.3979', '_blank')}
                     >
                       Liên Hệ Ngay
