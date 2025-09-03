@@ -101,7 +101,7 @@ export default function HeroSection() {
             <div className="relative">
               <Avatar className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 border-4 border-red-500/30 glow-red">
                 <AvatarImage
-                  src="/avatar.jpg"
+                  src="avatar.jpg"
                   alt="Phú Huy Avatar"
                 />
                 <AvatarFallback>PH</AvatarFallback>
