@@ -101,7 +101,7 @@ export default function HeroSection() {
             <div className="relative">
               <Avatar className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 border-4 border-red-500/30 glow-red">
                 <AvatarImage
-                  src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/474882454_1313143333067240_5295512466136977995_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFe6jLQTKp0-V5B6I6cI-E9BVdSsnzp304FV1KyfOnfTtKDFyGfC2guC10CTjDC5sccumJ7jjns0VR1VjW8C5mm&_nc_ohc=vrbKalQBxc4Q7kNvwFFpdPa&_nc_oc=AdlC1wngmB3GNHX18zoqCoo3AtmGq4W0_mSZcOV5O0ia16JyMQ4bloJGL_XMsg2SWijL1ZvNsbO9R0DHVlv_hgY6&_nc_zt=23&_nc_ht=scontent.fsgn5-9.fna&_nc_gid=THVioyMkrC6LvoAmyEzCpg&oh=00_AfQvo9mif8qHQHBBSFqXiLKsXx4IfATPmK1A9sqs74r2Cg&oe=6886E4E1"
+                  src="/avatar.jpg"
                   alt="Phú Huy Avatar"
                 />
                 <AvatarFallback>PH</AvatarFallback>
